@@ -1,4 +1,4 @@
-std::pair<int, int> symmetricPoint( const std::pair<int, int>& p,
-                                    const std::pair<int, int>& q ) {
+using Point = std::pair< int, int >;
+Point symmetricPoint( const Point& p, const Point& q ) {
   return { 2 * q.first - p.first, 2 * q.second - p.second };
 }
