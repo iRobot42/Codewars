@@ -1,5 +1,6 @@
-using namespace std;
-string cookingTime( const string& N, int m, int s, const string& P ) {
-  int r{ int( ( 60.0 * m + s ) * stod( N ) / stod( P ) + 0.999 ) };
-  return to_string( r / 60 ) + " minutes " + to_string( r % 60 ) + " seconds";
+#include <fmt/format.h>
+using str = std::string;
+str cookingTime( const str& n, int m, int s, const str& p ) {
+  const int sec( ceil(( 60 * m + s ) * stod( n ) / stod( p )));
+  return fmt::format( "{} minutes {} seconds", sec / 60, sec % 60 );
 }
