@@ -1,4 +1,5 @@
-std::string payCheese( std::vector< int > arr ) {
-  int t{ 99 }; for ( const int i : arr ) t += i;
-  return "£" + std::to_string( t / 100 * 35 );
+#include <range/v3/numeric/accumulate.hpp>
+#include <fmt/format.h>
+std::string payCheese( std::vector< int > a ) {
+  return fmt::format( "£{}", ranges::accumulate( a, 99 ) / 100 * 35 );
 }
