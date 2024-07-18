@@ -1,11 +1,10 @@
 #include <cmath>
-bool isPrime( int number ) {
-  const int root( sqrt( number ));
-  for ( int factor{ 2 }; factor <= root; ++factor )
-    if (!( number % factor )) return false;
-  return number > 1;
+bool prime( int n ) {
+  for ( int i( sqrt( n )); i > 1; --i )
+    if (!( n % i )) return false;
+  return n > 1;
 }
-int nextPrime( int number ) {
-  while ( !isPrime( ++number ));
-  return number;
+int nextPrime( int n ) {
+  while ( !prime( ++n ));
+  return n;
 }
