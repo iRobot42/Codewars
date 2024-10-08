@@ -1,4 +1,4 @@
-std::vector<int> allocateRooms( std::vector< std::vector< int >>& customers ) {
+std::vector< int > allocateRooms( std::vector< std::vector< int >>& customers ) {
   sort( customers.begin(), customers.end() );
   std::vector< int > rooms, hotel( customers.size() );
   for ( const auto& customer : customers )
