@@ -9,7 +9,7 @@ int solve( int x, int y ) {
     } while ( tmp /= 10 );
     return rot == num; }};
   int count{};
-  do if ( rotated( x )) ++count;
+  do count += rotated( x );
   while ( ++x < y );
   return count;
 }
