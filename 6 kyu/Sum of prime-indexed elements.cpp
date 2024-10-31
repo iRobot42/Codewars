@@ -1,12 +1,12 @@
 #include <cmath>
-int solve( std::vector< int > v ) {
-  constexpr auto is_prime{ []( int n ){
-    const int lim( sqrt( n ));
-    for ( int f{ 2 }; f <= lim; ++f )
-      if (!( n % f )) return false;
-    return n > 1; }};
+int solve( std::vector< int > numbers ) {
   int sum{};
-  for ( size_t i{}; i < v.size(); ++i )
-    if ( is_prime( i )) sum += v[ i ];
+  for ( size_t index{ 2 }; index < numbers.size(); ++index ) {
+    bool is_prime_index{ true };
+    const int limit( sqrt( index ));
+    for ( int factor{ 2 }; is_prime_index && factor <= limit; ++factor )
+      if (!( index % factor )) is_prime_index = false;
+    if ( is_prime_index ) sum += numbers[ index ];
+  }
   return sum;
 }
